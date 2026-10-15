@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+    Copyright © 2026 Roman Pasichnyk
+    SPDX-License-Identifier: OSL-3.0 OR AFL-3.0
+
+    payment_action is required: Payment::place() calls initialize() (which
+    creates the Amazon Pay checkout session) only when the method reports one.
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <zero_amazonpay>
+                <active>0</active>
+                <model>Zero\AmazonPay\Model\Payment</model>
+                <title>Amazon Pay</title>
+                <region>eu</region>
+                <sandbox>1</sandbox>
+                <merchant_id/>
+                <store_id/>
+                <public_key_id/>
+                <private_key backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <payment_intent>AuthorizeWithCapture</payment_intent>
+                <order_status>pending_payment</order_status>
+                <payment_action>order</payment_action>
+                <allowspecific>0</allowspecific>
+                <sort_order>25</sort_order>
+                <group>offline</group>
+            </zero_amazonpay>
+        </payment>
+    </default>
+</config>
