@@ -1,4 +1,4 @@
-# fixstacks/module-zero-amazon-pay — licensing
+# zerofront/module-zero-amazon-pay — licensing
 
 Copyright © 2026 Roman Pasichnyk.
 
